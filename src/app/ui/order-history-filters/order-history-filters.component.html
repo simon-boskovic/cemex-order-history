@@ -1,0 +1,83 @@
+@let formChange = formChange$ | async;
+<div class="c-filters">
+  <form [formGroup]="orderHistoryForm">
+    <div class="u-d-fx u-align-center u-justify-between u-fx-wrap">
+      <div class="u-d-fx u-fx-wrap">
+        <div class="c-status u-d-fx u-fx-column u-align-start u-gap-2">
+          <label for="">Status</label>
+          <section>
+            <mat-radio-group formControlName="status">
+              @for (status of orderStatus | keyvalue; track $index) {
+              <mat-radio-button class="c-radio-button" [value]="status.value">{{
+                status.value
+              }}</mat-radio-button>
+              }
+            </mat-radio-group>
+          </section>
+        </div>
+        <div class="devider"></div>
+        <div class="c-product-line u-d-fx u-fx-column u-align-start u-gap-2">
+          <label for="">Product Line</label>
+          <section>
+            <mat-form-field>
+              <mat-select name="food" formControlName="productLine">
+                @for (line of productLine | keyvalue; track $index) {
+                <mat-option [value]="line.value">{{ line.value }}</mat-option>
+                }
+              </mat-select>
+            </mat-form-field>
+          </section>
+        </div>
+        <div class="devider"></div>
+        <div class="c-date u-d-fx u-align-start u-fx-wrap">
+          <section class="c-section-from">
+            <div class="u-d-fx u-fx-column u-align-start u-gap-2">
+              <label for="">From</label>
+              <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="pickerFrom"
+                  formControlName="from"
+                />
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="pickerFrom"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #pickerFrom></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </section>
+          <section class="c-section-to u-pl-3">
+            <div class="u-d-fx u-fx-column u-align-start u-gap-2">
+              <label for="">To</label>
+              <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="pickerTo"
+                  formControlName="to"
+                />
+                <mat-datepicker-toggle
+                  matIconSuffix
+                  [for]="pickerTo"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #pickerTo></mat-datepicker>
+              </mat-form-field>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="c-search">
+        <mat-form-field style="width: 100%">
+          <input
+            type="number"
+            matInput
+            placeholder="Search for Order Number"
+            formControlName="orderNumber"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

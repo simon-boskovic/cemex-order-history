@@ -1,0 +1,19 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+}
+
+.c-title,
+.c-filters {
+  padding: 2rem;
+}
+
+.c-list {
+  padding: 0 2rem 0 2rem;
+}
+
+.c-list {
+  overflow: hidden;
+}

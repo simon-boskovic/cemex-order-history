@@ -1,0 +1,35 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+table {
+  border-spacing: 0 8px !important;
+}
+
+.u-mat-bold {
+  font-weight: 600;
+}
+.c-status-badge {
+  width: 33px;
+  height: 25px;
+}
+
+.c-status-badge {
+  border-radius: 5px;
+}
+
+.c-status-badge--in-progress {
+  background: #3fa9f5;
+}
+.c-status-badge--pending {
+  background: #fbb03b;
+}
+.c-status-badge--completed {
+  background: #7ac943;
+}
+
+table {
+  background-color: #f4f6f9;
+}

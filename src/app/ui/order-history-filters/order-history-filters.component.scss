@@ -1,0 +1,35 @@
+.c-filters {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border: 1px solid #e0e0e0;
+  background: white;
+  padding: 1rem;
+}
+
+.devider {
+  width: 2px;
+  height: 80px;
+  background: #ebebeb;
+  margin: 0 20px 0 20px;
+}
+
+.c-search {
+  min-width: 250px;
+  place-self: flex-end;
+}
+
+@media only screen and (width < 768px) {
+  .devider {
+    display: none;
+  }
+
+  .c-section-to {
+    padding-left: 0 !important;
+  }
+
+  .c-product-line,
+  .c-status,
+  .c-date,
+  .c-section-from {
+    padding-bottom: 1rem;
+  }
+}

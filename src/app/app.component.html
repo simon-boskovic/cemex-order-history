@@ -1,0 +1,23 @@
+<layout @fadeIn>
+  <div title>
+    <h1>Order History</h1>
+  </div>
+  <order-history-filters filters />
+  <div list>
+    @if (isLoading$ |async) {
+    <div class="c-loading">
+      <mat-spinner />
+    </div>
+    } @else { @let orders = (orders$ | async)!; @if(!!orders.length) {
+    <order-history-list [orders]="orders" @fadeIn />
+
+    } @else {
+    <div class="c-empty" @fadeIn>
+      <mat-icon svgIcon="info" class="c-info-icon"> </mat-icon>
+
+      <h1>Nothing To display</h1>
+      <span>Please Adjust filters to see more results.</span>
+    </div>
+    } }
+  </div>
+</layout>
